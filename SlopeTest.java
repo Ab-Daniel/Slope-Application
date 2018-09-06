@@ -11,6 +11,10 @@ public class SlopeTest
 		frame.setTitle("Slope of a Line");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		SlopeCompomemt component = new SlopeCompomemt();
+		frame.add(component);
+		frame.setVisible(true);
+		
 	}
 	
 }
