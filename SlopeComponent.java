@@ -8,10 +8,10 @@ import java.awt.geom.Point2D;
 
 import javax.swing.JComponent;
 
-public class SlopeComponent extends JComponent
+public class SlopeCompomemt extends JComponent
 {
 	
-	public SlopeComponent()
+	public SlopeCompomemt()
 	{
 		
 
@@ -72,11 +72,36 @@ public class SlopeComponent extends JComponent
 			
 			g2.drawLine(mousePressedX1, mousePressedY1, mousePressedX2, mousePressedY2);
 			
+			//Display coordinates
+			g2.drawString("("+ ((mousePressedX1 - 200)/25) +","+ (((mousePressedY1 - 200)*-1)/25) +")", mousePressedX1 + 5, mousePressedY1 + 5);
+			g2.drawString("("+ ((mousePressedX2 - 200)/25) +","+ (((mousePressedY2 - 200)*-1)/25) +")", mousePressedX2 + 5, mousePressedY2 + 5);
+			
+			//Display the slope
+			g2.drawString("Slope = ", ((mousePressedX1+mousePressedX2)/2), ((mousePressedY1/mousePressedY2)/2));
+			
 		}
 		
 	}
 	
-	public void plotPoints(Graphics g2)
+	public void calcSlope()
+	{
+		
+		int x;
+		String xString;
+		
+		if((mousePressedY2>mousePressedY1) && (mousePressedX2>mousePressedX1))
+		{
+			x = mousePressedY2/mousePressedY1;
+			//xString = 
+		}
+		
+		String slope;
+		
+		//return slope;
+		
+	}
+	
+	public void plotPoints(Graphics2D g2)
 	{
 		
 		double x1 = p1.getX();
@@ -86,9 +111,9 @@ public class SlopeComponent extends JComponent
 		double y2 = p2.getY();
 		
 		Ellipse2D.Double dot1 = new Ellipse2D.Double(x1, y1, 5, 5);
-		//g2.fill(dot1);
+		g2.fill(dot1);
 		Ellipse2D.Double dot2 = new Ellipse2D.Double(x2, y2, 5, 5);
-		//g2.fill(dot2);
+		g2.fill(dot2);
 		
 	}
 	
