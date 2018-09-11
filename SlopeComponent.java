@@ -77,27 +77,21 @@ public class SlopeCompomemt extends JComponent
 			g2.drawString("("+ ((mousePressedX2 - 200)/25) +","+ (((mousePressedY2 - 200)*-1)/25) +")", mousePressedX2 + 5, mousePressedY2 + 5);
 			
 			//Display the slope
-			g2.drawString("Slope = ", ((mousePressedX1+mousePressedX2)/2), ((mousePressedY1/mousePressedY2)/2));
+			g2.drawString("Slope = " + calcSlope(), ((mousePressedX1+mousePressedX2)/2), ((mousePressedY1+mousePressedY2)/2));
 			
 		}
 		
 	}
 	
-	public void calcSlope()
+
+	public String calcSlope()
 	{
 		
-		int x;
-		String xString;
+		int slopeInt = (mousePressedX2-mousePressedX1)/(mousePressedY2-mousePressedY1);
 		
-		if((mousePressedY2>mousePressedY1) && (mousePressedX2>mousePressedX1))
-		{
-			x = mousePressedY2/mousePressedY1;
-			//xString = 
-		}
+		String slopeString = String.format("%1.1f", slopeInt);
 		
-		String slope;
-		
-		//return slope;
+		return slopeString;
 		
 	}
 	
